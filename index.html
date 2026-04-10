@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>To My Beloved Bhaiya</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>❤️</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#99907c",
+                        "background": "#131313",
+                        "surface-container-low": "#1c1b1b",
+                        "on-primary": "#3c2f00",
+                        "on-surface": "#e5e2e1",
+                        "secondary-container": "#4d2caa",
+                        "on-surface-variant": "#d0c5af",
+                        "surface": "#131313",
+                        "primary-container": "#d4af37",
+                        "surface-container": "#201f1f",
+                        "on-background": "#e5e2e1",
+                        "primary": "#f2ca50",
+                        "primary-fixed": "#ffe088",
+                        "secondary": "#ccbdff",
+                        "tertiary": "#d0cdcd",
+                        "surface-tint": "#e9c349",
+                        "primary-fixed-dim": "#e9c349",
+                        "surface-variant": "#353534",
+                        "surface-container-lowest": "#0e0e0e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Noto Serif"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { background-color: #131313; scroll-behavior: smooth; overflow-x: hidden; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .cinematic-shadow { box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.5); }
+        .glass-nav { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+        .text-gradient-gold {
+            background: linear-gradient(135deg, #f2ca50 0%, #d4af37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .story-paragraph { margin-bottom: 2.5rem; line-height: 2; font-weight: 300; font-size: 1.125rem; }
+        .editorial-text { font-family: 'Noto Serif', serif; }
+        .narrative-dropcap::first-letter {
+            float: left;
+            font-size: 4.5rem;
+            line-height: 1;
+            padding-right: 0.75rem;
+            color: #f2ca50;
+            font-family: 'Noto Serif', serif;
+            font-style: italic;
+            font-weight: 700;
+        }
+
+        /* Particles Background */
+        .particles-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 0;
+        }
+        .particle {
+            position: absolute;
+            background: rgba(242, 202, 80, 0.3);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: float-particle linear infinite;
+        }
+        @keyframes float-particle {
+            from { transform: translateY(0); opacity: 0; }
+            50% { opacity: 1; }
+            to { transform: translateY(-100vh); opacity: 0; }
+        }
+
+        /* Parallax Utilities */
+        .parallax-target { transition: transform 0.1s ease-out; }
+        
+        /* Vertical Timeline */
+        .timeline-container {
+            position: relative;
+        }
+        .timeline-line {
+            position: absolute;
+            left: -2rem;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background: rgba(242, 202, 80, 0.1);
+        }
+        .timeline-progress {
+            position: absolute;
+            left: -2rem;
+            top: 0;
+            width: 2px;
+            background: #f2ca50;
+            height: 0%;
+            transition: height 0.1s linear;
+        }
+
+        /* Gallery Lightbox Effect */
+        .gallery-item {
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .gallery-item img {
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .gallery-item:hover img {
+            transform: scale(1.08);
+            filter: grayscale(0) brightness(1.1);
+        }
+        
+        /* Scroll reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="text-on-surface font-body selection:bg-primary selection:text-on-primary">
+<!-- NAVIGATION -->
+<nav class="fixed top-0 left-0 w-full z-[100] glass-nav bg-surface/70 px-6 py-4 flex justify-between items-center border-b border-white/5">
+<div class="text-primary font-headline italic font-bold tracking-tight text-xl">The Monograph</div>
+<div class="hidden md:flex gap-8 items-center text-xs tracking-[0.2em] uppercase font-label text-on-surface-variant">
+<a class="hover:text-primary transition-colors" href="#origin">The Beginning</a>
+<a class="hover:text-primary transition-colors" href="#timeline">Memories</a>
+<a class="hover:text-primary transition-colors" href="#lessons">The Ideal</a>
+<a class="hover:text-primary transition-colors" href="#gallery">Gallery</a>
+</div>
+<div class="md:hidden">
+<span class="material-symbols-outlined text-primary">menu</span>
+</div>
+</nav>
+<!-- 1. LOADER / INTRO OVERLAY -->
+<section class="h-screen w-full flex flex-col items-center justify-center bg-surface relative z-50">
+<div class="text-center space-y-6 px-6 max-w-3xl reveal">
+<p class="text-secondary font-label tracking-[0.3em] uppercase text-[10px] md:text-xs">For someone who shaped my life...</p>
+<h2 class="font-headline text-3xl md:text-5xl font-light italic text-on-surface leading-snug">
+            “Some people are born as brothers… <br class="hidden md:block"/> and some become something much more than that.”
+        </h2>
+</div>
+<div class="absolute bottom-12 animate-bounce">
+<span class="material-symbols-outlined text-primary-fixed-dim">expand_more</span>
+</div>
+</section>
+<!-- 2. HERO SECTION -->
+<header class="relative min-h-screen flex items-center justify-center overflow-hidden bg-surface">
+<div class="particles-container" id="hero-particles"></div>
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent"></div>
+<div class="relative z-10 text-center px-6 parallax-target" data-speed="0.2">
+<h1 class="font-headline text-6xl md:text-9xl font-bold tracking-tighter mb-8 text-gradient-gold">Happy Birthday Bhaiya ❤️</h1>
+<p class="font-label text-on-surface-variant text-lg md:text-2xl tracking-wide max-w-3xl mx-auto font-light leading-relaxed">
+            This isn’t just a wish… <br class="hidden md:block"/> it’s everything I never said ❤️
+        </p>
+</div>
+</header>
+<!-- 3. ORIGIN STORY -->
+<section class="py-32 px-6 md:px-24 bg-surface-container-lowest relative" id="origin">
+<div class="max-w-6xl mx-auto flex flex-col md:flex-row items-start gap-16 timeline-container">
+<div class="timeline-line hidden md:block"></div>
+<div class="timeline-progress hidden md:block" id="origin-progress"></div>
+<div class="w-full md:w-1/2 aspect-[4/5] rounded-xl overflow-hidden cinematic-shadow bg-surface-container md:sticky md:top-32 parallax-target" data-speed="-0.1">
+<img alt="Nostalgic neighborhood in Behala" class="w-full h-full object-cover opacity-80 mix-blend-luminosity hover:mix-blend-normal transition-all duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmXXIs2BhJ7BL84QB1OsPXnRGB_CaUxVb-mqAHKo2BLS-uewwdMwnUDRKkiOVtdIvXECbX008vy5G3vHmaTxSK7bQBte71VCcs1yp9DpKzy1AdK2usG7kW-epPJ4UDn6x3rNJOQTSxhUBfFGyQcIX2BXnYmxIXafsmiNeYdzHjP8KTyrTG1OC87FN84t-4U8oX7Boj_x8qgyOfsJO1puA1-I23SKgrJGauMWTN12ZS3glKqPhMJA0gg628QhNhxunn9XeFVgmK8to7"/>
+</div>
+<div class="w-full md:w-1/2 reveal">
+<div class="inline-block px-4 py-1 bg-secondary-container/30 rounded-full mb-8">
+<span class="text-on-secondary-container font-label text-[10px] uppercase tracking-widest">The Beginning | Behala</span>
+</div>
+<h2 class="font-headline text-5xl text-on-surface leading-tight mb-12">❤️ The Story</h2>
+<div class="editorial-text text-on-surface-variant">
+<p class="story-paragraph narrative-dropcap">
+                    I don’t remember everything from the very beginning, but there is one moment that changed everything for me. It was Rakhi, at nani ghar. I was in 2nd standard — a shy kid who was always a little scared and unsure around people. You had probably met me before, but I was too young to even remember. For me, that day was the first real meeting.
+                </p>
+<p class="story-paragraph">
+                    And somehow, in just a few moments, you made me feel comfortable. You didn’t treat me like a small, awkward kid. You became one yourself. You handed me your keypad phone — filled with games that, at that time, felt like the biggest treasure in the world — and just like that, I was happy.
+                </p>
+<p class="story-paragraph italic text-primary/80 text-2xl font-light">
+                    That night, when it was time for you to leave, you casually asked, “Will you come with me to my home?”
+                </p>
+<p class="story-paragraph">
+                    I was small, but I still remember looking at Mummy for approval. She agreed… and I went with you. And from that moment on, your home in Ballygunge stopped being just your home. It became mine too.
+                </p>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. TIMELINE: BALLYGUNGE DAYS -->
+<section class="py-32 px-6 md:px-24 bg-surface" id="timeline">
+<div class="max-w-5xl mx-auto">
+<div class="mb-24 space-y-4 reveal">
+<span class="text-primary font-label text-xs uppercase tracking-[0.3em]">The Golden Years</span>
+<h2 class="font-headline text-4xl md:text-6xl text-on-surface">Every summer meant only one thing—coming to you.</h2>
+</div>
+<div class="space-y-32 editorial-text">
+<!-- Vacation Rituals -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center timeline-container">
+<div class="timeline-line hidden md:block"></div>
+<div class="order-2 md:order-1 reveal">
+<p class="story-paragraph">
+                        From class 2 onwards, almost every holiday began the same way. The first day of vacation, my bags would already be packed, and I would rush to Ballygunge like I belonged there. Those 50–60 days didn’t feel like visiting someone. They felt like living where I was meant to be.
+                    </p>
+<p class="story-paragraph">
+                        Our days were simple, but they meant everything to me. We always ate together. No matter what. Even if I woke up late, I would wait. Even when you had to leave early in the morning for Jetking and come back around 10 or 11, I would sit and wait for you — just so we could have breakfast together. There was something special about that. Even something as simple as bread and chai felt perfect… because it was with you.
+                    </p>
+</div>
+<div class="order-1 md:order-2 h-[500px] rounded-lg overflow-hidden cinematic-shadow parallax-target" data-speed="0.05">
+  <img 
+    alt="Bread and chai in warm morning light" 
+    class="w-full h-full object-contain grayscale hover:grayscale-0 transition-all duration-700" 
+    src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-isJW46DfGdkKMzV9Np4xRoaXsTNQUgqJnqgbuhloOhahY817ra3wbWV0QvwDrDta6Z7wCJHtQdvRA-9aFPyJE_m38bKfD0g-1WmLLqPJeWQZSnR1FdaLgblW7p_IJGHnQkrXkoy5Mxn9bydGTxP0yaUXpeKVX7JiUQY66JqqJRFFn69v_grSh9xYM23F-pzaw6cw_B-Q6fYmsZWVLeE5gQZ7yPLbZVTx92t8wpQaEM6kOxZy8O42gmPPdrukAuQ3zyMvDJ0M7ilO"/>
+</div>
+</div>
+<!-- Habits & Food -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+<div class="aspect-square rounded-full overflow-hidden cinematic-shadow border-4 border-surface-container parallax-target" data-speed="-0.05">
+<img alt="Temple atmosphere Birla Mandir" class="w-full h-full object-cover" src="https://static.hectindia.com/0000/6/2024/04/21/birla-mandir-kolkata-west-bengal-india.webp"/>
+</div>
+<div class="reveal">
+<p class="story-paragraph">
+                        At home, I was a non-vegetarian. But at your place, everything was pure veg. And strangely, it never bothered me. I didn’t miss chicken or eggs. Spending time with you mattered more than anything else. In fact, because of you, I started eating everything — karela, patal, vegetables I would have never touched otherwise. And sometimes, just for fun, we would go out and grab a roll together — like a small secret treat.
+                    </p>
+<p class="story-paragraph">
+                        Evenings had their own magic. We would often go to Birla Mandir, spend time there, and then pick up cakes — black forest, chocolate mousse, and pastries — from Balaram Mullick. And then we would walk back home together. That walk… those evenings… were my favorite part of every vacation.
+                    </p>
+</div>
+</div>
+<!-- Discipline & Studies -->
+<div class="max-w-3xl mx-auto text-center space-y-10 reveal">
+<p class="story-paragraph">
+                    Mornings were different. Before your daily routine and before your puja, you would sit with me and help me with my studies. You saw potential in me even when I didn’t see it myself. You helped me with my homework, sometimes even writing the headings in your beautiful handwriting. You were always there — for everything I needed help with.
+                </p>
+<p class="story-paragraph italic text-2xl border-y border-outline/20 py-12 parallax-target" data-speed="0.1">
+                    But the biggest thing you gave me was something you never directly taught. You showed me what discipline and devotion look like. I would see you sit in the mandir for hours, praying with full focus. Sometimes I would sit beside you, sometimes I would just wait for you. But slowly, without even realizing it, that part became a part of me too.
+                </p>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. EMOTIONAL PEAK -->
+<section class="py-48 px-6 bg-surface-container-lowest relative overflow-hidden">
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/5 via-transparent to-transparent"></div>
+<div class="max-w-4xl mx-auto text-center space-y-12 reveal">
+<span class="material-symbols-outlined text-6xl text-primary opacity-50" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+<h2 class="font-headline text-5xl md:text-7xl text-on-surface italic leading-tight parallax-target" data-speed="0.15">
+            “Aapne kabhi kaha nahi… <br/> hamesha karke dikhaya.”
+        </h2>
+<div class="w-24 h-px bg-primary/30 mx-auto"></div>
+</div>
+</section>
+<!-- 6. TECH & CHILDHOOD -->
+<section class="py-32 px-6 md:px-24 bg-surface">
+<div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20">
+<div class="editorial-text order-2 md:order-1 reveal">
+<p class="story-paragraph">
+                And then there was your computer — probably my favorite part of all. You had internet. You knew how to download things. You used torrents, explored movies, found animated and superhero content… and I would just sit beside you, watching everything you did. I didn’t even realize it at that time, but that’s where my interest in tech started. Not from books. From watching you.
+            </p>
+<p class="story-paragraph">
+                You had Cricket 17, and you played it like a kid yourself — hitting centuries, smashing 4s and 6s. Whenever I asked for my turn, you would say my hands were too small to reach the buttons. But honestly… I never really wanted to play. I just wanted to watch you and enjoy that moment.
+            </p>
+<p class="story-paragraph">
+                During IPL, you would bring a big packet of chips, support KKR like anything, and we would enjoy every match like it was a final. And in the evenings, on the terrace, you were the only grown-up playing cricket with all of us kids — and yet, you were the most childlike among us. That was the best part.
+            </p>
+</div>
+<div class="space-y-12 order-1 md:order-2">
+<div class="aspect-video rounded-xl overflow-hidden cinematic-shadow parallax-target" data-speed="0.08">
+<img alt="Old computer tech setup" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000" src="https://cdn.mos.cms.futurecdn.net/7w7CkLqUvQVzfwrYghXKRU-970-80.jpg.webp"/>
+</div>
+<div class="p-8 bg-surface-container-low rounded-xl border-l-4 border-primary italic text-on-surface-variant font-light leading-relaxed reveal">
+                "Growing up, I was always a skinny kid. People made fun of me for it. But you… you never cared. You never made me feel less. You accepted me exactly the way I was. And that meant more than I ever said."
+            </div>
+</div>
+</div>
+</section>
+<!-- 7. LIFE LESSONS & TRANSITION -->
+<section class="py-32 px-6 md:px-24 bg-surface-container-lowest" id="lessons">
+<div class="max-w-4xl mx-auto editorial-text text-center space-y-16">
+<h2 class="font-headline text-4xl md:text-5xl text-on-surface reveal">The Ideal Role Model</h2>
+<div class="space-y-10 text-on-surface-variant">
+<p class="story-paragraph reveal">
+                We had our silly moments too. Making random songs about the most ridiculous things… laughing for no reason… just being stupid and happy. There are so many memories like that, I could go on forever.
+            </p>
+<p class="story-paragraph reveal">
+                As I grew older, things started changing. Boards exam came. Studies increased. Vacations became shorter. Visits to Ballygunge became less frequent. And then you moved to Delhi. Distance increased. But somehow… the bond never did.
+            </p>
+<p class="story-paragraph reveal">
+                I still remember how you once kept checking reviews and pictures of a Motorola phone, imagining how it would feel to have it. You saved up, and finally bought it for yourself. And then, years later, when my laptop stopped working and I was struggling… you made sure my studies didn’t suffer. You gifted me a Lenovo laptop. You didn’t just take care of yourself. You always took care of me too.
+            </p>
+<div class="py-16 reveal">
+<div class="aspect-[21/9] rounded-xl overflow-hidden cinematic-shadow mb-10 parallax-target" data-speed="-0.05">
+<img alt="Two brothers walking silhouette" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgg-jAuHF_aS2wPQCwIjOvW0YpdYBhyQ8Mx9YDcuHRbMb5ZzOXPkCpCIONZ5Z7oAujTqPWMQzJ6ArI7SqwZ7FvgteD_TYUHiX_6EhY-DAb8jpXSIPH9nEGAZ3HG7ldNwLOPGwAGIW7up9P9JUlKRL9OpiXMAjZ4ulItPkEZrPAvROyvVPRLklWlyaTwPM3CdR1Tfj7qtsTOgz65CZU_dy_nDn7DmO7Kdg6yJstx3WU_nPVwvvMlgNWlgKR8KzPLUqfvW7dW--hdfiZ"/>
+</div>
+</div>
+<p class="story-paragraph reveal">
+                And now, looking at you today… You are calm. You are respectful. You are deeply religious. You are kind, grounded, and strong. You are everything I look up to. You are my role model.
+            </p>
+<p class="story-paragraph reveal">
+                Time has passed. Life has changed. You got engaged. You got married. And honestly… in my mind, you are still that same person I grew up with. Just… a more mature, complete version of him. And bhabhi — she is truly perfect for you. You both look so right together, like it was always meant to be.
+            </p>
+</div>
+</div>
+</section>
+<!-- 8. PHOTO GALLERY -->
+<section class="py-32 px-6 bg-surface" id="gallery">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4 reveal">
+<div class="space-y-2">
+<span class="text-primary font-label text-xs uppercase tracking-widest">Captured Beats</span>
+<h2 class="font-headline text-4xl text-on-surface">Moments In Time</h2>
+</div>
+<div class="h-px flex-grow bg-outline/20 mx-8 mb-4 hidden md:block"></div>
+<p class="text-on-surface-variant text-sm max-w-xs font-light italic">"There are so many memories like that, I could go on forever."</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+<div class="gallery-item aspect-square overflow-hidden rounded-lg bg-surface-container reveal">
+<img alt="Tech nostalgia" class="w-full h-full object-cover opacity-100" src="./pics/b6.jpeg"/>
+</div>
+<div class="gallery-item aspect-square overflow-hidden rounded-lg bg-surface-container reveal" style="transition-delay: 0.3s">
+<img alt="Birla Mandir" class="w-full h-full object-cover opacity-100" src="./pics/b62.jpeg"/>
+</div>
+<div class="gallery-item aspect-square overflow-hidden rounded-lg bg-surface-container reveal" style="transition-delay: 0.2s">
+<img alt="Street food" class="w-full h-full object-cover opacity-100" src="./pics/b n me.jpeg"/>
+</div>
+<div class="gallery-item aspect-square overflow-hidden rounded-lg bg-surface-container reveal" style="transition-delay: 0.3s">
+<img alt="Cricket" class="w-full h-full object-cover opacity-100" src="./pics/wed 2.jpeg"/>
+</div>
+<div class="gallery-item aspect-square overflow-hidden rounded-lg bg-surface-container reveal" style="transition-delay: 0.3s">
+<img alt="Cricket" class="w-full h-full object-cover opacity-100" src="./pics/wed - Copy.jpeg"/>
+</div>
+<div class="gallery-item aspect-square overflow-hidden rounded-lg bg-surface-container reveal" style="transition-delay: 0.3s">
+<img alt="Cricket" class="w-full h-full object-cover opacity-100" src="./pics/b b.jpeg"/>
+</div>
+<div class="gallery-item aspect-square overflow-hidden rounded-lg bg-surface-container reveal" style="transition-delay: 0.3s">
+<img alt="Laptop gift" class="w-full h-full object-cover opacity-100" src="./pics/PSP_3743.JPG"/>
+</div>
+<div class="gallery-item aspect-square overflow-hidden rounded-lg bg-surface-container reveal" style="transition-delay: 0.3s">
+<img alt="Cinematic light" class="w-full h-full object-cover opacity-100" src="./pics/b tree.jpeg"/>
+</div>
+</div>
+</div>
+</section>
+<!-- 9. SURPRISE: THE BALAJI PACT -->
+<section class="py-40 px-6 bg-surface-container-lowest text-center relative overflow-hidden">
+<div class="max-w-4xl mx-auto editorial-text">
+<h3 class="font-headline text-3xl mb-12 text-on-surface reveal">To me, you are like Ram, and she is like Sita.</h3>
+<div class="p-12 md:p-20 rounded-2xl bg-surface cinematic-shadow border border-primary/10 relative reveal">
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 bg-primary text-on-primary px-6 py-2 rounded-full font-label text-xs uppercase tracking-[0.2em] font-bold">❤️</div>
+<p class="story-paragraph text-2xl italic leading-relaxed text-on-surface mb-12">
+                And me… I will always be your Balaji. If I could ever open my chest and show what’s inside, it would only be you both.
+            </p>
+<p class="story-paragraph text-xl text-on-surface-variant font-light mb-12">
+                No matter where life takes us, no matter how much distance comes in between… I will always be your little brother. And you… You will always be my idol.
+            </p>
+<button class="inline-flex items-center gap-2 px-8 py-4 bg-primary text-on-primary font-label text-sm uppercase tracking-widest hover:bg-primary-fixed transition-colors rounded-full font-bold group" id="surprise-btn">
+                CLICK ME
+                <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">celebration</span>
+</button>
+</div>
+</div>
+</section>
+<!-- 10. CLOSING -->
+<footer class="bg-stone-950/90 w-full py-24 flex flex-col items-center justify-center gap-12 px-8 relative overflow-hidden">
+<div class="particles-container" id="footer-particles"></div>
+<div class="text-center space-y-4 relative z-10 reveal">
+<p class="text-primary/60 font-label text-xs uppercase tracking-widest">The Truth Is—</p>
+<div class="text-[#f2ca50] font-headline italic text-4xl md:text-7xl parallax-target" data-speed="0.05">I didn’t just grow up with you.<br> I grew up because of you.</div>
+</div>
+<div class="flex flex-col items-center gap-8 relative z-10">
+<div class="flex gap-12">
+<a class="text-on-surface-variant font-label text-[10px] tracking-[0.3em] uppercase hover:text-primary transition-colors" href="#">Back to Top</a>
+<a class="text-on-surface-variant font-label text-[10px] tracking-[0.3em] uppercase hover:text-primary transition-colors" href="#origin">The Story</a>
+</div>
+<div class="text-on-surface-variant/40 font-label text-[10px] tracking-widest uppercase">
+            © 2026 | For My Brother
+        </div>
+</div>
+</footer>
+<script>
+    // Particle Generator
+    function createParticles(containerId, count) {
+        const container = document.getElementById(containerId);
+        if (!container) return;
+        for (let i = 0; i < count; i++) {
+            const p = document.createElement('div');
+            p.className = 'particle';
+            const size = Math.random() * 3 + 1;
+            p.style.width = `${size}px`;
+            p.style.height = `${size}px`;
+            p.style.left = `${Math.random() * 100}%`;
+            p.style.top = `${Math.random() * 100}%`;
+            p.style.animationDuration = `${Math.random() * 10 + 10}s`;
+            p.style.animationDelay = `-${Math.random() * 20}s`;
+            container.appendChild(p);
+        }
+    }
+    createParticles('hero-particles', 50);
+    createParticles('footer-particles', 30);
+
+    // Parallax & Scroll Reveal & Timeline Progress
+    window.addEventListener('scroll', () => {
+        const scroll = window.pageYOffset;
+        
+        // Parallax
+        document.querySelectorAll('.parallax-target').forEach(el => {
+            const speed = parseFloat(el.getAttribute('data-speed'));
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                el.style.transform = `translateY(${(rect.top - window.innerHeight/2) * speed}px)`;
+            }
+        });
+
+        // Scroll Reveal
+        document.querySelectorAll('.reveal').forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight * 0.85) {
+                el.classList.add('active');
+            }
+        });
+
+        // Timeline progress logic
+        const originSection = document.getElementById('origin');
+        const progressEl = document.getElementById('origin-progress');
+        if (originSection && progressEl) {
+            const rect = originSection.getBoundingClientRect();
+            const sectionHeight = rect.height;
+            const scrolled = Math.max(0, Math.min(100, ((-rect.top) / (sectionHeight - window.innerHeight)) * 100));
+            progressEl.style.height = `${scrolled}%`;
+        }
+    });
+
+    // Confetti Surprise
+    const surpriseBtn = document.getElementById('surprise-btn');
+    if (surpriseBtn) {
+        surpriseBtn.addEventListener('click', () => {
+            const count = 200;
+            const defaults = {
+                origin: { y: 0.7 },
+                colors: ['#f2ca50', '#d4af37', '#ffffff', '#ffe088']
+            };
+
+            function fire(particleRatio, opts) {
+                confetti({
+                    ...defaults,
+                    ...opts,
+                    particleCount: Math.floor(count * particleRatio)
+                });
+            }
+
+            fire(0.25, { spread: 26, startVelocity: 55 });
+            fire(0.2, { spread: 60 });
+            fire(0.35, { spread: 100, decay: 0.91, scalar: 0.8 });
+            fire(0.1, { spread: 120, startVelocity: 25, decay: 0.92, scalar: 1.2 });
+            fire(0.1, { spread: 120, startVelocity: 45 });
+            
+            // Subtle feedback
+            surpriseBtn.innerText = "Enjoy your day, Bhaiya!";
+            setTimeout(() => {
+                surpriseBtn.innerHTML = 'Click Me <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">celebration</span>';
+            }, 3000);
+        });
+    }
+
+    // Trigger initial reveal
+    window.dispatchEvent(new Event('scroll'));
+</script>
+</body></html>
